@@ -27,8 +27,8 @@ def average_value():
 # Группировка по столбцу и получение суммы всех столбцов по сформированным группам
 def sum_of_column():
     df = create_pd()
-    sum_region = df['Region'].sum()
-    return sum_region
+    sum_unit = df['Unit Cost'].sum()
+    return sum_unit
 
 
 # Сортировка по столбцу в порядке убывания

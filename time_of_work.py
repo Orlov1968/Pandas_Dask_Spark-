@@ -2,6 +2,7 @@ import dask.dataframe as dd
 import pandas as pd
 import time
 import matplotlib.pyplot as plt
+from matplotlib.ticker import AutoMinorLocator
 
 list_files = ['100 Sales Records.csv', '5000 Sales Records.csv', '500000 Sales Records.csv',
               '1500000 Sales Records.csv', '5m Sales Records.csv', ]
@@ -43,9 +44,18 @@ def time_calculation_pandas():
 x = list_size_files
 y1 = time_calculation_pandas()
 y2 = time_calculation_dask()
-plt.title('Скорость вычисления от объёма данных')
-plt.xlabel('объём файла в kB')
-plt.ylabel('время вычисления в ms')
-plt.grid()
-plt.plot(x, y1, x, y2)
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.set_title("Графики зависимостей: y1 - pandas, y2 - dask", fontsize=16)
+ax.set_xlabel("Объём файла, кВ", fontsize=14)
+ax.set_ylabel("Время вычисления, ms", fontsize=14)
+ax.grid(which="major", linewidth=1.2)
+ax.grid(which="minor", linestyle="--", color="gray", linewidth=0.5)
+ax.plot(x, y1, c="red", label="pandas")
+ax.plot(x, y2, label="dask")
+ax.legend()
+ax.xaxis.set_minor_locator(AutoMinorLocator())
+ax.yaxis.set_minor_locator(AutoMinorLocator())
+ax.tick_params(which='major', length=10, width=2)
+ax.tick_params(which='minor', length=5, width=1)
 plt.show()
+
