@@ -57,6 +57,6 @@ def sum_column():
     print(f'Время выполнения операции: {time_of_work}')  # 117.8 ms /181.91 /5305.4 / 9980.9 / 33176.8
 
 
-# для df = dd.read_csv('*.csv', encoding='UTF-8') - 47637.04
+# для df = dd.read_csv('*.csv', encoding='UTF-8') - 47637.04 ms
 
 sum_column()

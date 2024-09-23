@@ -6,6 +6,7 @@ from matplotlib.ticker import AutoMinorLocator
 
 list_files = ['100 Sales Records.csv', '5000 Sales Records.csv', '500000 Sales Records.csv',
               '1500000 Sales Records.csv', '5m Sales Records.csv', ]
+# Объём исследуемых файлов в кВ
 list_size_files = [5.0, 181.3, 17680.7, 53284.5, 197163.5, ]
 
 
